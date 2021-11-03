@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allShow</title>
+</head>
+<body>
+<table style="border: 1px solid black; border-collapse: collapse; font-size: 30px">
+    <thead>
+        <tr>
+            <th style="border: 1px solid black; font-size: 30px"> Id </th>
+            <th style="border: 1px solid black; font-size: 30px"> Brand </th>
+            <th style="border: 1px solid black; font-size: 30px"> Diagonal </th>
+            <th style="border: 1px solid black; font-size: 30px"> ConnectionType </th>
+            <th style="border: 1px solid black; font-size: 30px"> Model </th>
+            <th style="border: 1px solid black; font-size: 30px"> Voltage </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="tv : ${tvs}">
+            <td style="border: 1px solid black; font-size: 30px"><span th:text="${tv.id}"> Id </span></td>
+            <td style="border: 1px solid black; font-size: 30px"><span th:text="${tv.brand}"> Brand </span></td>
+            <td style="border: 1px solid black; font-size: 30px"><span th:text="${tv.diagonal}"> Diagonal </span></td>
+            <td style="border: 1px solid black; font-size: 30px"><span th:text="${tv.connectionType}"> ConnectionType </span></td>
+            <td style="border: 1px solid black; font-size: 30px"><span th:text="${tv.model}"> Model </span></td>
+            <td style="border: 1px solid black; font-size: 30px"><span th:text="${tv.voltage}"> Voltage </span></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/}">Main menu</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/add}">Add TV</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/delete}">Delete TV</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/update/update_get_id}">Change TV</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/show/all_diagonal_wider_than}">Find by criteria</a></button>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<body>
+<form th:action="@{/registration}" th:object="${user}" th:method="POST">
+  <div>
+    <input th:field="*{login}"/>
+    <p th:each="error: ${#fields.errors('login')}"
+       th:text="${error}">Validation error</p>
+  </div>
+  <div>
+    <input th:field="*{password}"/>
+    <p th:each="error : ${#fields.errors('password')}"
+       th:text="${error}">Validation error</p>
+  </div>
+  <button type="submit">submit</button>
+</form>
+
+<a th:href="@{/login.html}">login</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+    <p sec:authentication="principal.username">login</p>
+    <div sec:authorize="hasAuthority('ADMIN')">
+        <a style="color: #000 ;text-decoration: none" th:href="@{add}">add TV</a>
+        <br>
+    </div>
+    <p style="font-size: 30px">
+        <a style="color: #000 ;text-decoration: none" th:href="@{/show/all}">Show all TVs</a>
+        <br>
+        <a style="color: #000 ;text-decoration: none" th:href="@{/delete}">Delete TV by id</a>
+        <br>
+        <a style="color: #000 ;text-decoration: none" th:href="@{/update/update_get_id}">Change TV by id</a>
+        <br>
+        <a style="color: #000 ;text-decoration: none" th:href="@{/show/all_diagonal_wider_than}">Find TVs by criteria</a>
+    </p>
+</body>
+</html>
