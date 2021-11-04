@@ -22,7 +22,7 @@ public class UserService implements UserDetailsService {
     private final PasswordEncoder passwordEncoder;
 
     public void addUser(UserDTO userDTO) {
-        userRepository.save(new User(userDTO.getLogin(), userDTO.getPassword(), "USER"));
+        userRepository.save(new User(userDTO.getLogin(), passwordEncoder.encode(userDTO.getPassword()), "USER"));
     }
 
     @Override
@@ -38,7 +38,7 @@ public class UserService implements UserDetailsService {
         return
                 new org.springframework.security.core.userdetails.User(
                         user.getLogin(),
-                        passwordEncoder.encode(user.getPassword()),
+                        user.getPassword(),
                         Collections.singletonList(
                                 new SimpleGrantedAuthority(
                                         user.getRole()

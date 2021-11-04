@@ -27,7 +27,6 @@ import static org.springframework.security.web.context.HttpSessionSecurityContex
 @RequiredArgsConstructor
 public class LoginController {
 
-    private final UserService userService;
     private final AuthenticationManager authenticationManager;
 
     @GetMapping

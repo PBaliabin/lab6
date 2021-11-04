@@ -21,7 +21,7 @@ public class DeleteTVController {
     private final TVService tvService;
 
     @PostMapping
-    public String delete(@RequestParam("id") String id, Model model, HttpServletResponse httpServletResponse) throws URISyntaxException, IOException {
+    public String delete(@RequestParam("id") String id, HttpServletResponse httpServletResponse) throws URISyntaxException, IOException {
         tvService.delete(Integer.parseInt(id));
 
         httpServletResponse.sendRedirect("/show/all");

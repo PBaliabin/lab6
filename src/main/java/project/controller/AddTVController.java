@@ -1,8 +1,6 @@
 package project.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +9,6 @@ import project.service.TVService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 @Controller
 @RequiredArgsConstructor
@@ -22,11 +19,10 @@ public class AddTVController {
 
     @PostMapping
     @ResponseBody
-    public void postTV(@ModelAttribute("tvdto") TVDTO tvdto, HttpServletResponse httpServletResponse) throws URISyntaxException, IOException {
+    public void postTV(@ModelAttribute("tvdto") TVDTO tvdto, HttpServletResponse httpServletResponse) throws IOException {
         tvService.add(tvdto);
 
         httpServletResponse.sendRedirect("/show/all");
-        return;
     }
 
     @GetMapping
