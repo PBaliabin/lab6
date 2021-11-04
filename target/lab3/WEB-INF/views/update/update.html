@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body style="font-size: 30px">
+<form th:method="POST" th:action="@{/update}" th:object="${tvdto}">
+    <div>
+        ID -
+        <input type="text" style="font-size: 30px" readonly="readonly" th:required="required" th:field="*{id}"/>
+        <br>
+        <br>
+    </div>
+    <div>
+        Brand
+        <br>
+        <input type="text" style="font-size: 30px" th:required="required" th:field="*{brand}"/>
+        <br>
+        <br>
+    </div>
+    <div>
+        Diagonal
+        <br>
+        <input type="number" style="font-size: 30px" th:required="required" th:field="*{diagonal}"/>
+        <br>
+        <br>
+    </div>
+    <div>
+        Connection type
+        <br>
+        <input type="text" style="font-size: 30px" th:required="required" th:field="*{connectionType}"/>
+        <br>
+        <br>
+    </div>
+    <div>
+        Model
+        <br>
+        <input type="text" style="font-size: 30px" th:required="required" th:field="*{model}"/>
+        <br>
+        <br>
+    </div>
+    <div>
+        Voltage
+        <br>
+        <input type="number" style="font-size: 30px" th:required="required" th:field="*{voltage}"/>
+        <br>
+        <br>
+    </div>
+    <div th:if="${#fields.hasErrors('diagonal')}" th:errors="*{diagonal}"></div>
+
+    <input type="submit" style="font-size: 30px" value="Update"/>
+</form>
+<br>
+<div>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/}">Main menu</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{add}">Add TV</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{show/all}">Show all TVs</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{delete}">Delete TV</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{show/all_diagonal_wider_than}">Find by criteria</a></button>
+</div>
+</body>
+</html>

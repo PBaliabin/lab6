@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <title>home</title>
 </head>
-<body>
-    <p sec:authentication="principal.username">login</p>
-    <div sec:authorize="hasAuthority('ADMIN')">
-        <a style="color: #000 ;text-decoration: none" th:href="@{add}">add TV</a>
+<body style="font-size: 30px">
+    <div>
+        Hello <span sec:authentication="principal.username">login</span>! Nice to meet you!
         <br>
     </div>
-    <p style="font-size: 30px">
+    <div sec:authorize="hasAuthority('ADMIN')">
+        <a style="color: #000 ;text-decoration: none" th:href="@{/add}">Add TV</a>
+        <br>
+    </div>
+    <div>
         <a style="color: #000 ;text-decoration: none" th:href="@{/show/all}">Show all TVs</a>
         <br>
+    </div>
+    <div sec:authorize="hasAuthority('ADMIN')">
         <a style="color: #000 ;text-decoration: none" th:href="@{/delete}">Delete TV by id</a>
         <br>
+    </div>
+    <div sec:authorize="hasAuthority('ADMIN')">
         <a style="color: #000 ;text-decoration: none" th:href="@{/update/update_get_id}">Change TV by id</a>
         <br>
+    </div>
+    <div>
         <a style="color: #000 ;text-decoration: none" th:href="@{/show/all_diagonal_wider_than}">Find TVs by criteria</a>
-    </p>
+    </div>
 </body>
 </html>

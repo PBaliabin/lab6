@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/delete}">
+    <div>
+        <p style="font-size: 30px">
+            ID
+            <br>
+            <label>
+                <input type="number" style="font-size: 30px" th:required="required" th:value="${id}" name="id"/>
+            </label>
+        </p>
+
+        <input type="submit" style="font-size: 30px" value="Delete"/>
+    </div>
+</form>
+<br>
+<div>
+  <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/}">Main menu</a></button>
+  <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{add}">Add TV</a></button>
+  <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{show/all}">Show all TVs</a></button>
+  <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{update/update_get_id}">Change TV</a></button>
+  <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{show/all_diagonal_wider_than}">Find by criteria</a></button>
+</div>
+</body>
+</html>

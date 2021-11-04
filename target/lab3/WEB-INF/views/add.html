@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body style="font-size: 30px">
+<form th:method="POST" th:action="@{/add}" th:object="${tvdto}">
+    <div>
+        <p>
+            <label for="brand">Brand</label>
+            <br>
+            <input type="text" style="font-size: 30px" th:required="required" th:field="*{brand}" id="brand"/>
+        </p>
+        <p>
+            <label for="diagonal">Diagonal</label>
+            <br>
+            <input type="number" style="font-size: 30px" th:required="required" th:field="*{diagonal}" id="diagonal"/>
+        </p>
+        <p>
+            <label for="connectionType">Connection type</label>
+            <br>
+            <input type="text" style="font-size: 30px" th:required="required" th:field="*{connectionType}" id="connectionType"/>
+        </p>
+        <p>
+            <label for="model">Model</label>
+            <br>
+            <input type="text" style="font-size: 30px" th:required="required" th:field="*{model}" id="model"/>
+        </p>
+        <p>
+            <label for="voltage">Voltage</label>
+            <br>
+            <input type="number" style="font-size: 30px" th:required="required" th:field="*{voltage}" id="voltage"/>
+        </p>
+
+
+        <input type="submit" style="font-size: 30px" value="Add"/>
+    </div>
+</form>
+<br>
+<div>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/}">Main menu</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{show/all}">Show all TVs</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{delete}">Delete TV</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{update/update_get_id}">Change TV</a></button>
+    <button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{show/all_diagonal_wider_than}">Find by criteria</a></button>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<body>
+<form th:action="@{/login}" th:object="${user}" th:method="POST">
+    <div style="font-size: 30px">
+        Login
+        <br>
+        <input style="font-size: 30px" th:field="*{login}"/>
+        <p style="font-size: 30px" th:each="error: ${#fields.errors('login')}"
+           th:text="${error}">Validation error</p>
+    </div>
+    <br>
+    <div style="font-size: 30px">
+        Password
+        <br>
+        <input style="font-size: 30px" th:field="*{password}"/>
+        <p style="font-size: 30px" th:each="error : ${#fields.errors('password')}"
+           th:text="${error}">Validation error</p>
+    </div>
+    <br>
+    <button style="font-size: 30px" type="submit">Login</button>
+</form>
+<br>
+<button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/registration}">Registration</a></button>
+</body>
+</html>

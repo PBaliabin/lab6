@@ -1,19 +1,25 @@
 <html>
 <body>
 <form th:action="@{/login}" th:object="${user}" th:method="POST">
-    <div>
-        <input th:field="*{login}"/>
-        <p th:each="error: ${#fields.errors('login')}"
+    <div style="font-size: 30px">
+        Login
+        <br>
+        <input style="font-size: 30px" th:field="*{login}"/>
+        <p style="font-size: 30px" th:each="error: ${#fields.errors('login')}"
            th:text="${error}">Validation error</p>
     </div>
-    <div>
-        <input th:field="*{password}"/>
-        <p th:each="error : ${#fields.errors('password')}"
+    <br>
+    <div style="font-size: 30px">
+        Password
+        <br>
+        <input style="font-size: 30px" th:field="*{password}"/>
+        <p style="font-size: 30px" th:each="error : ${#fields.errors('password')}"
            th:text="${error}">Validation error</p>
     </div>
-    <button type="submit">submit</button>
+    <br>
+    <button style="font-size: 30px" type="submit">Login</button>
 </form>
-
-<a style="color: #000 ;text-decoration: none" th:href="@{/registration}">registration</a>
+<br>
+<button><a style="color: #000 ;text-decoration: none; font-size: 30px" th:href="@{/registration}">Registration</a></button>
 </body>
 </html>
