@@ -17,8 +17,8 @@ public class TVJsonViewResolver implements ViewResolver {
 
         //Formatting date
         ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-        mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+//        mapper.registerModule(new JavaTimeModule());
+//        mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         view.setObjectMapper(mapper);
 
         return view;

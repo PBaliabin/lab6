@@ -35,10 +35,16 @@ public class GetTVController {
         return "show/all_diagonal_wider_than";
     }
 
-    @GetMapping("/answer")
-    public String getDiagonal(@RequestParam("diagonal") String diagonal,  Model model) {
-        model.addAttribute("tvs", tvService.findAllByDiagonalGreaterThan(Integer.parseInt(diagonal)));
+    @GetMapping(value = "/answer", headers = {"Accept=text/html"})
+    public String getDiagonal(@RequestParam("diagonal") int diagonal,  Model model) {
+        model.addAttribute("tvs", tvService.findAllByDiagonalGreaterThan(diagonal));
         return "show/all";
+    }
+
+    @GetMapping(value = "/answer", headers = {"Accept=application/json"})
+    @ResponseBody
+    public Iterable<TV> getDiagonalJson(@RequestParam("diagonal") int diagonal) {
+        return tvService.findAllByDiagonalGreaterThan(diagonal);
     }
 
 //    @RequestMapping(value="/{id}", method=RequestMethod.GET, headers={"Accept=application/json"})
