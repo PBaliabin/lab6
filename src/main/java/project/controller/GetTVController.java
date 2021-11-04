@@ -46,15 +46,4 @@ public class GetTVController {
     public Iterable<TV> getDiagonalJson(@RequestParam("diagonal") int diagonal) {
         return tvService.findAllByDiagonalGreaterThan(diagonal);
     }
-
-//    @RequestMapping(value="/{id}", method=RequestMethod.GET, headers={"Accept=application/json"})
-//    public @ResponseBody Student getStudent(@PathVariable("id") int id) {
-//        return studentsService.getStudentById(id);
-//    }
-//    @RequestMapping(value="/{id}", method=RequestMethod.GET, headers = {"Accept=text/html"})
-//    public String getStudent(@PathVariable("id") int id, Model model) {
-//        model.addAttribute(studentsService.getStudentById(id));
-//        return "show";
-//    }
-
 }
